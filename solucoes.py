@@ -2,7 +2,17 @@ def sao_anagramas(string1, string2):
 	pass
 
 def cifra_de_cesar(texto, deslocamento):
-	pass
+    resultado = ""
+    for char in texto:
+
+        if char.isupper():
+            resultado += chr((ord(char) - 65 + deslocamento) % 26 + 65)
+        elif char.islower():
+            resultado += chr((ord(char) - 97 + deslocamento) % 26 + 97)
+        else:
+            resultado += char
+    return resultado
+
 
 def encontrar_maior_palavra(frase):
 	frase = frase.split()
